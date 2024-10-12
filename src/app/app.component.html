@@ -1,0 +1,76 @@
+<h1>Welcome to My Financial Planning Tool</h1>
+<p>Let's build something amazing!</p>
+<h2>Personal Details</h2>
+
+<form (ngSubmit)="onSubmit()">
+  <table class="client-table">
+    <thead>
+      <tr>
+        <th>Personal Details</th>
+        <th>Client 1</th>
+        <th>Client 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Surname</td>
+        <td><input type="text" [(ngModel)]="client1Surname" name="client1Surname"></td>
+        <td><input type="text" [(ngModel)]="client2Surname" name="client2Surname"></td>
+      </tr>
+      <tr>
+        <td>Given Names</td>
+        <td><input type="text" [(ngModel)]="client1GivenNames" name="client1GivenNames"></td>
+        <td><input type="text" [(ngModel)]="client2GivenNames" name="client2GivenNames"></td>
+      </tr>
+      <tr>
+        <td>Preferred Name</td>
+        <td><input type="text" [(ngModel)]="client1PreferredName" name="client1PreferredName"></td>
+        <td><input type="text" [(ngModel)]="client2PreferredName" name="client2PreferredName"></td>
+      </tr>
+      <tr>
+        <td>Title</td>
+        <td><input type="text" [(ngModel)]="client1Title" name="client1Title"></td>
+        <td><input type="text" [(ngModel)]="client2Title" name="client2Title"></td>
+      </tr>
+      <tr>
+        <td>Date of Birth</td>
+        <td>
+          <input type="date" [(ngModel)]="client1Dob" name="client1Dob" (change)="calculateAge('client1')">
+          <span>{{ client1Age }} years</span>
+        </td>
+        <td>
+          <input type="date" [(ngModel)]="client2Dob" name="client2Dob" (change)="calculateAge('client2')">
+          <span>{{ client2Age }} years</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Marital Status</td>
+        <td><input type="text" [(ngModel)]="client1MaritalStatus" name="client1MaritalStatus"></td>
+        <td><input type="text" [(ngModel)]="client2MaritalStatus" name="client2MaritalStatus"></td>
+      </tr>
+      <tr>
+        <td>Country of Birth</td>
+        <td><input type="text" [(ngModel)]="client1CountryOfBirth" name="client1CountryOfBirth"></td>
+        <td><input type="text" [(ngModel)]="client2CountryOfBirth" name="client2CountryOfBirth"></td>
+      </tr>
+      <tr>
+        <td>Residential Address</td>
+        <td><input type="text" [(ngModel)]="client1Address" name="client1Address"></td>
+        <td><input type="text" [(ngModel)]="client2Address" name="client2Address"></td>
+      </tr>
+      <tr>
+        <td>Email Address</td>
+        <td><input type="email" [(ngModel)]="client1Email" name="client1Email"></td>
+        <td><input type="email" [(ngModel)]="client2Email" name="client2Email"></td>
+      </tr>
+      <tr>
+        <td>Phone Number</td>
+        <td><input type="tel" [(ngModel)]="client1Phone" name="client1Phone"></td>
+        <td><input type="tel" [(ngModel)]="client2Phone" name="client2Phone"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Submit Button -->
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
